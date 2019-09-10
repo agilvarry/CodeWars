@@ -1,9 +1,8 @@
 def order(sentence):
-  result = []
-  list = sentence.split()
-  for i in range(len(list)+1):
-      for j in list:
-          if j.find(str(i+1))>-1:
-              result.append(j)    
-          
-  return " ".join(result)
+  # code here
+  return " ".join(sorted(sentence.split(), key=get_num))
+  
+def get_num(word):
+  for i in word:
+    if i.isdigit(): 
+      return int(i)     
